@@ -9,7 +9,9 @@ import SwiftUI
 
 struct maracuja: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("maracuja")
+            .resizable()
+            .frame(width: 486, height: 503, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 

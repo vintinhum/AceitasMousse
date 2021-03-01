@@ -9,7 +9,9 @@ import SwiftUI
 
 struct morango: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("morango")
+            .resizable()
+            .frame(width: 297, height: 475, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 
