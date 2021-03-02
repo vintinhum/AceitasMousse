@@ -8,10 +8,39 @@
 import SwiftUI
 
 struct morango: View {
+    
+    @State private var scale: CGFloat = 1
+    @State private var numberOfTouches: Int = 0
+    @State var fruta: String = "morango"
+    
     var body: some View {
-        Image("morango")
-            .resizable()
-            .frame(width: 297, height: 475, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        
+        ZStack{
+            Rectangle()
+                .frame(width: 450, height: 950, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.blue)
+                
+                
+                
+                
+            Button(action: {
+                
+                if numberOfTouches <= 6 {
+                    scale += scale * 0.5
+                    numberOfTouches += 1
+                }
+                else {
+                    fruta = ""
+                }
+                
+            }, label: {
+                Image("\(fruta)")
+                    .resizable()
+                    .frame(width: 62.5263157, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            })
+            .scaleEffect(scale)
+            .animation(.easeInOut)
+        }
     }
 }
 
