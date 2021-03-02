@@ -13,13 +13,16 @@ struct morango: View {
     @State private var numberOfTouches: Int = 0
     @State var fruta: String = "morango"
     
+    
     var body: some View {
         
         ZStack{
             Rectangle()
-                .frame(width: 450, height: 950, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.blue)
+                .edgesIgnoringSafeArea(.all)
                 
+                .foregroundColor(.blue)
+            
+            
                 
                 
                 
