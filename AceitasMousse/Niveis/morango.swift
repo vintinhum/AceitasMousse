@@ -12,10 +12,10 @@ struct morango: View {
     @State private var scale: CGFloat = 1
     @State private var numberOfTouches: Int = 0
     @State var fruta: String = "morango"
-    @State var botao: String = ""
+//    @State var botao: String = ""
     
-    @State public var currentDate = 0
-    @State public var bgColor = Color.purple
+    @State public var currentDate: CGFloat = 0
+    @State public var bgColor = Color.init(.cyan)
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -26,7 +26,7 @@ struct morango: View {
                 .edgesIgnoringSafeArea(.all)
                 .onReceive(timer) { input in
                     
-                    if currentDate == 1 {
+                    if currentDate == 2 {
                         currentDate = 0
                     }
                     else {
@@ -35,29 +35,31 @@ struct morango: View {
                     
                     updateColor()
                 }
-                .animation(.linear(duration: 0.3))
+                .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
+                
+                
 
-            Button(action: {
-                print("tocou no botao")
-            }, label: {
-                Image("\(botao)")
-                    .resizable()
-                    .frame(width: 227, height: 81, alignment: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
-                    .position()
-                    
-            })
+//            Button(action: {
+//                print("tocou no botao")
+//            }, label: {
+//                Image("\(botao)")
+//                    .resizable()
+//                    .frame(width: 227, height: 81, alignment: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
+//                    .position()
+//
+//            })
             
             Button(action: {
                 
                 if numberOfTouches <= 6 {
                     scale += scale * 0.5
                     numberOfTouches += 1
-                    botao = ""
+//                    botao = ""
                 }
                 else {
                     fruta = ""
                         
-                    botao = "botao"
+//                    botao = "botao"
                 }
                 
             }, label: {
@@ -74,10 +76,10 @@ struct morango: View {
     
     func updateColor() {
         if self.currentDate == 0 {
-            self.bgColor = .purple
+            self.bgColor = Color.init(.cyan)
         }
         else {
-            self.bgColor = .yellow
+            self.bgColor = Color.init(.yellow)
         }
         
     }
