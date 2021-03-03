@@ -17,6 +17,7 @@ struct morango: View {
     @State public var currentDate: CGFloat = 0
     @State public var bgColor = Color.init(.cyan)
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var wrongAttempt: Bool = false
     
     var body: some View {
         
@@ -36,7 +37,11 @@ struct morango: View {
                     updateColor()
                 }
                 .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
-                
+                .onTapGesture {
+                    print("tocou errado")
+                    self.wrongAttempt.toggle()
+                    
+                }
                 
 
 //            Button(action: {
@@ -52,7 +57,7 @@ struct morango: View {
             Button(action: {
                 
                 if numberOfTouches <= 6 {
-                    scale += scale * 0.5
+                    scale += scale * 0.55
                     numberOfTouches += 1
 //                    botao = ""
                 }
@@ -67,8 +72,19 @@ struct morango: View {
                     .resizable()
                     .frame(width: 62.5263157, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             })
+            .buttonStyle(PlainButtonStyle())
+            .offset(x: wrongAttempt ? -10 : 0)
+            .animation(Animation.easeIn.repeatCount(4, autoreverses: true).speed(7))
+            .animation(nil)
             .scaleEffect(scale)
-            .animation(.easeInOut)
+            .animation(.default)
+            .onTapGesture {
+                if self.fruta == "" {
+                    //Passar de nível
+                    print("passou de nivel")
+                }
+            }
+            
             
             
         }
