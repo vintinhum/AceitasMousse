@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86C8B03C25EFDC1000CC80DE /* NivelConcluidoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C8B03B25EFDC1000CC80DE /* NivelConcluidoView.swift */; };
 		E561191825E92C0B0086A1A0 /* AceitasMousseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561191725E92C0B0086A1A0 /* AceitasMousseApp.swift */; };
 		E561191A25E92C0B0086A1A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561191925E92C0B0086A1A0 /* ContentView.swift */; };
 		E561191C25E92C0C0086A1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E561191B25E92C0C0086A1A0 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86C8B03B25EFDC1000CC80DE /* NivelConcluidoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NivelConcluidoView.swift; sourceTree = "<group>"; };
 		E561191425E92C0B0086A1A0 /* AceitasMousse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AceitasMousse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E561191725E92C0B0086A1A0 /* AceitasMousseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceitasMousseApp.swift; sourceTree = "<group>"; };
 		E561191925E92C0B0086A1A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E561195425E93C320086A1A0 /* Niveis */,
 				E561192225E92C0C0086A1A0 /* AceitasMousse.xcdatamodeld */,
 				E561191D25E92C0C0086A1A0 /* Preview Content */,
+				86C8B03B25EFDC1000CC80DE /* NivelConcluidoView.swift */,
 			);
 			path = AceitasMousse;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				E561195E25E93C650086A1A0 /* limao.swift in Sources */,
 				E561192425E92C0C0086A1A0 /* AceitasMousse.xcdatamodeld in Sources */,
+				86C8B03C25EFDC1000CC80DE /* NivelConcluidoView.swift in Sources */,
 				E561192125E92C0C0086A1A0 /* Persistence.swift in Sources */,
 				E561191A25E92C0B0086A1A0 /* ContentView.swift in Sources */,
 				E561195625E93C4B0086A1A0 /* morango.swift in Sources */,
