@@ -14,50 +14,83 @@ struct NivelConcluidoView: View {
     var imagemBotao: String
     
     var body: some View {
-        VStack{
-            HStack{
-                Text(nivel)
+        NavigationView{
+            VStack{
+                HStack{
+                    Text(nivel)
+                        .font(.custom("Abstract Groovy", size: 85))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color( red: 1, green: 0.95, blue: 0.8))
+                        .offset(x: 30, y: 60)
+                        
+
+                    
+                    Spacer()
+                }
                 
                 Spacer()
-            }
-            
-            Spacer()
-            
-            ZStack{
-                Image(imagemFruta)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 120, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .offset(x: 0, y: -100)
-                    .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                    
-                Image("retanguloBege")
-                    .resizable()
-                    .frame(width: 370, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-
-                    
-                Text("Parabéns! Você conseguiu!")
                 
-                Button(action: {print("Passando pra proxima fase")}){
-                    ZStack{
-                        Image(imagemBotao)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 320, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        Text("Continuar")
-                    }
-                   
-
-                        
+                ZStack{
+                    Image(imagemFruta)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 120, alignment: .center)
+                        .offset(x: 0, y: -100)
+                        .zIndex(1.0)
+                    
+                    Image("retanguloBege")
+                        .resizable()
+                        .frame(width: 370, height: 200, alignment: .center)
+                    
+                    
+                    Text("Parabéns! Você conseguiu!")
+                        .font(.custom("Ygro Sans Beta Medium", size: 25))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .foregroundColor(Color( red: 0.35, green: 0.1, blue: 0.01))
+                        .padding(.horizontal, 100)
+                    
+                    NavigationLink(
+                        destination: getDestination(),
+                        label: {
+                            ZStack{
+                                Image(imagemBotao)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 320, height: 200, alignment: .center)
+                                Text("Continuar")
+                                    .font(.custom("Abstract Groovy", size: 25))
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(Color( red: 1, green: 0.95, blue: 0.8))
+                            }
+                            .padding(.top, 200)
+                            
+                            
+                        })
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true)
+                    
                 }
-                .padding(.top, 200)
+                Spacer()
+                
             }
-      
-       
-            Spacer()
+            .background(color)
+            .ignoresSafeArea()
+            
+            
         }
-        .background(color)
-        .ignoresSafeArea()
+           
+        }
+
+    func getDestination() -> AnyView {
+        if (nivel == "1"){
+            return AnyView(limao())
+        }else if(nivel == "2"){
+            return AnyView(maracuja())
+        }else{
+            return AnyView(telaDeInicio())
+        }
     }
 }
 

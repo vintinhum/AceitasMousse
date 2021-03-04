@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct telaDeInicio: View {
+    
+    init(){
+            UINavigationBar.setAnimationsEnabled(false)
+    }
+    
     var body: some View {
         NavigationView {
             
             ZStack{
                 Rectangle()
                     .edgesIgnoringSafeArea(.all)
-                    .foregroundColor(Color.init(red: 245/255, green: 25/255, blue: 64/255))
+                    .foregroundColor(Color.init(red: 255/255, green: 243/255, blue: 206/255))
                 
                 HStack {
                     Image("maracuja inicial")
@@ -44,18 +49,24 @@ struct telaDeInicio: View {
                     NavigationLink(
                         destination: morango(),
                         label: {
-                            Image("play button")
+                            Image("jogar")
                                 .resizable()
                                 .frame(width: 172, height: 37, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         })
                         .navigationBarTitle("")
                         .navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true)
+                        
                 
                 
                     
             }
+
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 

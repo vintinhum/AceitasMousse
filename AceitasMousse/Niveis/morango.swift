@@ -18,10 +18,16 @@ struct morango: View {
     @State public var bgColor = Color.init(.cyan)
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var wrongAttempt: Bool = false
-    
+    @State var opacity: Double = 1
+    @State var nivelConcluido: Bool = false
+    @State var nextView: Bool = false
+
+
+
     var body: some View {
         
         ZStack{
+            
             Rectangle()
                 .foregroundColor(bgColor)
                 .edgesIgnoringSafeArea(.all)
@@ -40,6 +46,9 @@ struct morango: View {
                 .onTapGesture {
                     print("tocou errado")
                     self.wrongAttempt.toggle()
+                    if(self.nivelConcluido){
+                        self.nextView = true
+                    }
                     
                 }
                 
@@ -62,8 +71,9 @@ struct morango: View {
 //                    botao = ""
                 }
                 else {
-                    fruta = ""
-                        
+                    //fruta = ""
+                    self.opacity = 0
+                    self.nivelConcluido = true
 //                    botao = "botao"
                 }
                 
@@ -71,6 +81,7 @@ struct morango: View {
                 Image("\(fruta)")
                     .resizable()
                     .frame(width: 62.5263157, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .opacity(self.opacity)
             })
             .buttonStyle(PlainButtonStyle())
             .offset(x: wrongAttempt ? -10 : 0)
@@ -80,14 +91,21 @@ struct morango: View {
             .animation(.default)
             .onTapGesture {
                 if self.fruta == "" {
-                    //Passar de nível
+                    self.nivelConcluido = true
                     print("passou de nivel")
                 }
             }
             
             
             
+            
         }
+        .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $nextView, content: {
+            NivelConcluidoView(nivel: "1", color: Color(red: 0.9, green: 0.2, blue: 0.24), imagemFruta: "morango", imagemBotao: "botaoVermelho")
+
+        })
+
     }
     
     func updateColor() {
@@ -104,5 +122,8 @@ struct morango: View {
 struct morango_Previews: PreviewProvider {
     static var previews: some View {
         morango()
+            .previewDevice("iPhone 12 Pro")
+    
+        
     }
 }

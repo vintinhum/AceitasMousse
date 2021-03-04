@@ -17,6 +17,7 @@ struct limao: View {
     @State public var bgColor = Color.purple
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var wrongAttempt: Bool = false
+    @State var nextView: Bool = false
     
     var body: some View {
     
@@ -63,11 +64,17 @@ struct limao: View {
                 
                 .onTapGesture {
                     if(limaoScale==limaoMinScale){
-                       //Passar de níve;
+                       //Passar de nível;
+                        self.nextView.toggle()
                     }
             }
                 
         }
+        .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $nextView, content: {
+            NivelConcluidoView(nivel: "2", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "limao", imagemBotao: "botaoVerde")
+
+        })
         
     }
     

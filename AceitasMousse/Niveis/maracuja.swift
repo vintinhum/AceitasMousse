@@ -18,6 +18,7 @@ struct maracuja: View {
     @State var offsetSementes: CGSize = .zero
     @State var imagemMaracuja = "maracujaSemSementes"
     @State var imagemSementes = "sementes"
+    @State var nextView: Bool = false
 
     
     
@@ -66,6 +67,7 @@ struct maracuja: View {
                 .onTapGesture {
                     if(imagemMaracuja=="maracuja"){
                         //Nível finalizado
+                        self.nextView.toggle()
                     }
                 }
             
@@ -98,6 +100,11 @@ struct maracuja: View {
                
                 
         }
+        .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $nextView, content: {
+            NivelConcluidoView(nivel: "3", color: Color(red: 0.97, green: 0.77, blue: 0.28), imagemFruta: "maracuja", imagemBotao: "botaoLaranja")
+
+        })
     }
     
     func updateColor() {
