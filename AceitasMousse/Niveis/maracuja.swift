@@ -16,7 +16,7 @@ struct maracuja: View {
     @State var zIndex =  0.0
     @State var offsetMaracuja: CGSize = .zero
     @State var offsetSementes: CGSize = .zero
-    @State var imagemMaracuja = "maracuja"
+    @State var imagemMaracuja = "maracujaSemSementes"
     @State var imagemSementes = "sementes"
 
     
@@ -87,6 +87,7 @@ struct maracuja: View {
                                         Int(abs(self.offsetSementes.width - self.offsetMaracuja.width)) < 20) {
                                         //If seeds overlap maracuja
                                     self.imagemSementes = ""
+                                    self.imagemMaracuja = "maracuja"
                                         
                                 } else {
 //                                    self.offsetMaracuja = .zero
