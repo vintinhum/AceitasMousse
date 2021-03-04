@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E54FBA4825EFCE0600E1B02C /* telaDeInicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54FBA4725EFCE0600E1B02C /* telaDeInicio.swift */; };
 		86C8B03C25EFDC1000CC80DE /* NivelConcluidoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C8B03B25EFDC1000CC80DE /* NivelConcluidoView.swift */; };
 		E561191825E92C0B0086A1A0 /* AceitasMousseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561191725E92C0B0086A1A0 /* AceitasMousseApp.swift */; };
 		E561191A25E92C0B0086A1A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561191925E92C0B0086A1A0 /* ContentView.swift */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
+		E54FBA4725EFCE0600E1B02C /* telaDeInicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = telaDeInicio.swift; sourceTree = "<group>"; };
 		86C8B03B25EFDC1000CC80DE /* NivelConcluidoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NivelConcluidoView.swift; sourceTree = "<group>"; };
 		E561191425E92C0B0086A1A0 /* AceitasMousse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AceitasMousse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E561191725E92C0B0086A1A0 /* AceitasMousseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceitasMousseApp.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 				E561191925E92C0B0086A1A0 /* ContentView.swift */,
 				E561191B25E92C0C0086A1A0 /* Assets.xcassets */,
 				E561194A25E93C150086A1A0 /* onboardingView.swift */,
+				E54FBA4725EFCE0600E1B02C /* telaDeInicio.swift */,
 				E561192025E92C0C0086A1A0 /* Persistence.swift */,
 				E561194F25E93C270086A1A0 /* mapaView.swift */,
 				E561192525E92C0C0086A1A0 /* Info.plist */,
@@ -299,6 +303,7 @@
 				E561195625E93C4B0086A1A0 /* morango.swift in Sources */,
 				E561195025E93C270086A1A0 /* mapaView.swift in Sources */,
 				E561196325E93C7E0086A1A0 /* maracuja.swift in Sources */,
+				E54FBA4825EFCE0600E1B02C /* telaDeInicio.swift in Sources */,
 				E561194B25E93C150086A1A0 /* onboardingView.swift in Sources */,
 				E561191825E92C0B0086A1A0 /* AceitasMousseApp.swift in Sources */,
 			);
