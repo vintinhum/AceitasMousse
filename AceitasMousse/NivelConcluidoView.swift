@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct NivelConcluidoView: View {
     var nivel: String
@@ -22,8 +23,8 @@ struct NivelConcluidoView: View {
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color( red: 1, green: 0.95, blue: 0.8))
                         .offset(x: 30, y: 60)
-                        
-
+                    
+                    
                     
                     Spacer()
                 }
@@ -49,7 +50,7 @@ struct NivelConcluidoView: View {
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
                         .foregroundColor(Color( red: 0.35, green: 0.1, blue: 0.01))
-//                        .padding(.horizontal, 50)
+                    //                        .padding(.horizontal, 50)
                     
                     NavigationLink(
                         destination: getDestination(),
@@ -62,7 +63,7 @@ struct NivelConcluidoView: View {
                                         .scaledToFit()
                                         .aspectRatio(4, contentMode: .fit)
                                     Spacer()
-
+                                    
                                 }
                                 
                                 Text("Continuar")
@@ -83,14 +84,21 @@ struct NivelConcluidoView: View {
                 Spacer()
                 
             }
+            .onAppear {
+                if(nivel == "3"){
+                    AppReviewRequest.requestReviewIfNeeded()
+
+                }
+
+            }
             .background(color)
             .ignoresSafeArea()
             
             
         }
-           
-        }
-
+        
+    }
+    
     func getDestination() -> AnyView {
         if (nivel == "1"){
             return AnyView(limao())
