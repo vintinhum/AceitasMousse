@@ -15,6 +15,7 @@ let animatedImage = UIImage.animatedImage(with: images, duration: 3)
 struct launchScreen: View {
         
     var body: some View {
+        
     
         ZStack {
             Color("corBG")
