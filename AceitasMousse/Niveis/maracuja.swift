@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct maracuja: View {
     
+    @State private var engine: CHHapticEngine?
     @State public var currentDate = 0
     @State public var bgColor = Color.purple
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -26,6 +28,7 @@ struct maracuja: View {
         ZStack {Rectangle()
             .foregroundColor(bgColor)
             .edgesIgnoringSafeArea(.all)
+            .onAppear(perform: prepareHaptics)
             .onReceive(timer) { input in
                 
                 if currentDate == 1 {
@@ -41,12 +44,14 @@ struct maracuja: View {
             .onTapGesture {
                 print("tocou errado")
                 self.wrongAttempt.toggle()
-                
+                complexSuccess()
             }
             
             Image(imagemMaracuja)
                 .resizable()
                 .frame(width: 250, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .offset(x: wrongAttempt ? -10 : 0)
+                .animation(Animation.default.repeatCount(5).speed(7))
                 .offset(x: offsetMaracuja.width, y: offsetMaracuja.height)
                 .zIndex(1)
                 .gesture(
@@ -76,6 +81,8 @@ struct maracuja: View {
                 .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .zIndex(self.zIndex)
                 .offset(x: offsetSementes.width, y: offsetSementes.height)
+                .offset(x: wrongAttempt ? -10 : 0)
+                .animation(Animation.default.repeatCount(5).speed(7))
                 .gesture(
                     DragGesture()
                             .onChanged { gesture in
@@ -113,6 +120,38 @@ struct maracuja: View {
         }
         else {
             self.bgColor = .purple
+        }
+    }
+    
+    func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        
+        do {
+            self.engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
+    }
+    
+    func complexSuccess() {
+        // make sure that the device supports haptics
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        var events = [CHHapticEvent]()
+
+        // create one intense, sharp tap
+        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
+        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
+        let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 0)
+        events.append(event)
+
+        // convert those events into a pattern and play it immediately
+        do {
+            let pattern = try CHHapticPattern(events: events, parameters: [])
+            let player = try engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            print("Failed to play pattern: \(error.localizedDescription).")
         }
     }
 }

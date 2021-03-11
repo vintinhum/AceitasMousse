@@ -484,7 +484,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AceitasMousse/Preview Content\"";
-				DEVELOPMENT_TEAM = T6PW3HL3N4;
+				DEVELOPMENT_TEAM = X43VG9VLQG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AceitasMousse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -509,7 +509,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AceitasMousse/Preview Content\"";
-				DEVELOPMENT_TEAM = T6PW3HL3N4;
+				DEVELOPMENT_TEAM = X43VG9VLQG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AceitasMousse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
