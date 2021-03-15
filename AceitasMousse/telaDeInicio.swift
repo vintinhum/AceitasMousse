@@ -10,7 +10,7 @@ import SwiftUI
 struct telaDeInicio: View {
     
     init(){
-            UINavigationBar.setAnimationsEnabled(false)
+        UINavigationBar.setAnimationsEnabled(false)
     }
     
     var body: some View {
@@ -21,31 +21,25 @@ struct telaDeInicio: View {
                     .edgesIgnoringSafeArea(.all)
                     .foregroundColor(Color.init(red: 255/255, green: 243/255, blue: 206/255))
                 
-                HStack {
-                    Image("maracuja inicial")
-                        .resizable()
-                        .frame(width: 204, height: 218, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .position(x: 100, y: 61)
-                    Image("limao inicial")
-                        .resizable()
-                        .frame(width: 280, height: 508, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .position(x: 65, y: 200)
-                }
-                
-                HStack {
-                    Image("melancia")
-                        .resizable()
-                        .frame(width: 419, height: 425, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .position(x: -10, y: 700)
-                        .padding(.trailing)
-                    Image("goiaba inicial")
-                        .resizable()
-                        .frame(width: 131, height: 262, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .position(x: 140, y: 600)
-                        .padding()
+                VStack{
+                    HStack {
+                        Image("maracuja inicial")
+                            .resizable()
+                            .scaledToFit()
+                        
+                        Spacer()
+                    }
                     
-                }
-                
+                    HStack{
+                        Spacer()
+
+                        Image("limao novo inicial 2")
+                            .resizable()
+                            .scaledToFit()
+
+                    }
+                    
+                    
                     NavigationLink(
                         destination: morango(),
                         label: {
@@ -56,22 +50,53 @@ struct telaDeInicio: View {
                         .navigationBarTitle("")
                         .navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true)
-                        
-                
-                
                     
-            }
 
+                    
+                    HStack {
+
+                        Image("melancia inicial 2")
+                            .resizable()
+                            .scaledToFit()
+                        
+                        Spacer()
+
+                        
+
+                    }
+                    
+                    HStack{
+
+                        Spacer()
+
+                        Image("goiaba inicial")
+                            .resizable()
+                            .scaledToFit()
+                        
+                        
+                    }
+                    
+                    
+                   
+                    
+                    
+                }
+                .ignoresSafeArea()
+                
+            }
+            
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-
+        
     }
 }
 
 struct telaDeInicio_Previews: PreviewProvider {
     static var previews: some View {
         telaDeInicio()
+            .previewDevice("iPhone 12 Pro Max")
     }
 }
