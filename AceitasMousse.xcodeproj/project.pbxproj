@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86373B7E2600DECF0066BD2B /* caju.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86373B7D2600DECF0066BD2B /* caju.swift */; };
 		869EC14C25F129B2007EEE73 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EC14B25F129B2007EEE73 /* launchScreen.swift */; };
 		86BDBA0F25F119A40037366D /* AbstractGroovy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86BDBA0E25F119A40037366D /* AbstractGroovy.ttf */; };
 		86BDBA1425F119EB0037366D /* YgroSansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86BDBA1325F119EB0037366D /* YgroSansLight.ttf */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86373B7D2600DECF0066BD2B /* caju.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caju.swift; sourceTree = "<group>"; };
 		869EC14B25F129B2007EEE73 /* launchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
 		86BDBA0E25F119A40037366D /* AbstractGroovy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AbstractGroovy.ttf; sourceTree = "<group>"; };
 		86BDBA1325F119EB0037366D /* YgroSansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = YgroSansLight.ttf; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				E561195525E93C4B0086A1A0 /* morango.swift */,
 				E561195D25E93C650086A1A0 /* limao.swift */,
 				E561196225E93C7E0086A1A0 /* maracuja.swift */,
+				86373B7D2600DECF0066BD2B /* caju.swift */,
 			);
 			path = Niveis;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				86DAD09D25F9179F0057364D /* AppReviewRequest.swift in Sources */,
 				E561192125E92C0C0086A1A0 /* Persistence.swift in Sources */,
 				E561191A25E92C0B0086A1A0 /* ContentView.swift in Sources */,
+				86373B7E2600DECF0066BD2B /* caju.swift in Sources */,
 				E561195625E93C4B0086A1A0 /* morango.swift in Sources */,
 				E561195025E93C270086A1A0 /* mapaView.swift in Sources */,
 				E561196325E93C7E0086A1A0 /* maracuja.swift in Sources */,
