@@ -19,6 +19,8 @@ struct cereja: View {
     
     @State var spacerSize: CGSize = CGSize(width: 0, height: 1000)
     
+    @State var offsetCereja: CGPoint = .zero
+    
     var body: some View {
         
         ZStack{
@@ -64,14 +66,16 @@ struct cereja: View {
                         Image("cherries")
                             .resizable()
                             .scaledToFit()
+                            .position(x: offsetCereja.x, y: offsetCereja.y)
                             .aspectRatio(/*@START_MENU_TOKEN@*/1.5/*@END_MENU_TOKEN@*/, contentMode: .fit)
                             .gesture(
-                                DragGesture(coordinateSpace: .global)
+                                DragGesture()
                                         .onChanged { gesture in
-                                            gesture.translation
+                                            offsetCereja = gesture.location
                                         }
 
                                         .onEnded { value in
+                                                                                    
                                             if (
                                               value.location.x>=140 && value.location.x<=300 && value.location.y>=400 && value.location.y<=700) {
                                                     //If seeds overlap maracuja
@@ -119,5 +123,6 @@ struct cereja: View {
 struct cereja_Previews: PreviewProvider {
     static var previews: some View {
         cereja()
+            .previewDevice("iPad (8th generation)")
     }
 }

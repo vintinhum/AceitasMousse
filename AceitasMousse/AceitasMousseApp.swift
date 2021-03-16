@@ -17,7 +17,7 @@ struct AceitasMousseApp: App {
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             
             //telaDeInicio()
-            launchScreen()
+            cereja()
         }
     }
 }

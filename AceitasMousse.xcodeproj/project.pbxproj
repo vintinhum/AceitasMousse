@@ -176,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				E561195525E93C4B0086A1A0 /* morango.swift */,
-				E561195D25E93C650086A1A0 /* limao.swift */,
 				E561196225E93C7E0086A1A0 /* maracuja.swift */,
+				E561195D25E93C650086A1A0 /* limao.swift */,
 				86373B752600D3D70066BD2B /* cereja.swift */,
 			);
 			path = Niveis;
