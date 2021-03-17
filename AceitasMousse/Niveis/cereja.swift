@@ -21,6 +21,37 @@ struct cereja: View {
     
     @State var offsetCereja: CGPoint = .zero
     
+    @State private var fingerLocation: CGPoint?
+    
+    var cherrieDrag: some Gesture {
+            DragGesture()
+                .onChanged { gesture in
+                    offsetCereja = gesture.location
+                }
+
+                .onEnded { value in
+                     print(value.location.y)
+                    if (offsetCereja.y <= -1000 && offsetCereja.y >= -1200 &&
+                            offsetCereja.x <= 10 && offsetCereja.x >= -10) {
+                        print("level over")
+                            
+                    } else {
+//                                    self.offsetMaracuja = .zero
+                    }
+                }
+    }
+    
+    var fingerDrag: some Gesture { // 2
+            DragGesture()
+                .onChanged { value in
+                    self.fingerLocation = value.location
+                }
+                .onEnded { value in
+                    self.fingerLocation = nil
+                }
+        }
+        
+    
     var body: some View {
         
         ZStack{
@@ -61,7 +92,7 @@ struct cereja: View {
                         
                     
                     HStack{
-                        Spacer()
+                        Spacer(minLength: UIScreen.main.bounds.size.width/2 )
 
                         Image("cherries")
                             .resizable()
@@ -69,24 +100,9 @@ struct cereja: View {
                             .position(x: offsetCereja.x, y: offsetCereja.y)
                             .aspectRatio(/*@START_MENU_TOKEN@*/1.5/*@END_MENU_TOKEN@*/, contentMode: .fit)
                             .gesture(
-                                DragGesture()
-                                        .onChanged { gesture in
-                                            offsetCereja = gesture.location
-                                        }
+                                cherrieDrag.simultaneously(with: fingerDrag) // 4
 
-                                        .onEnded { value in
-                                                                                    
-                                            if (
-                                              value.location.x>=140 && value.location.x<=300 && value.location.y>=400 && value.location.y<=700) {
-                                                    //If seeds overlap maracuja
-                                                print("level over")
-                                                    
-                                            } else {
-            //                                    self.offsetMaracuja = .zero
-                                            }
-                                        }
                             )
-                        Spacer()
 
                     }
                     
