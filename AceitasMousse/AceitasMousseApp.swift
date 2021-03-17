@@ -16,7 +16,7 @@ struct AceitasMousseApp: App {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             
-            telaDeInicio()
+            caju()
         }
     }
 }
