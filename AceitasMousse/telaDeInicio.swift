@@ -19,7 +19,7 @@ struct telaDeInicio: View {
             ZStack{
                 Rectangle()
                     .edgesIgnoringSafeArea(.all)
-                    .foregroundColor(Color.init(red: 255/255, green: 243/255, blue: 206/255))
+                    .foregroundColor(Color.init(red: 249/255, green: 237/255, blue: 221/255))
                 
                 VStack{
                     HStack {
