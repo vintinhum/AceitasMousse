@@ -47,7 +47,7 @@ struct limao: View {
                     
                 }
 
-            Image("limao")
+            Image("limao novo")
                 .resizable()
                 .frame(width: 358, height: 358, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .offset(x: wrongAttempt ? -10 : 0)
@@ -76,7 +76,7 @@ struct limao: View {
         }
         .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $nextView, content: {
-            NivelConcluidoView(nivel: "2", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "limao", imagemBotao: "botaoVerde")
+            NivelConcluidoView(nivel: "2", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "limao novo", imagemBotao: "botaoVerde")
 
         })
         

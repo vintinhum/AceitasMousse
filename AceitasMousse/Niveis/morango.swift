@@ -58,7 +58,7 @@ struct morango: View {
             
             Image("\(fruta)")
                 .resizable()
-                .frame(width: 62.5263157, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width:100, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .opacity(self.opacity)
                 .offset(x: wrongAttempt ? -10 : 0)
                 .animation(Animation.easeIn.repeatCount(5, autoreverses: true).speed(7))

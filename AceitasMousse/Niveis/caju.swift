@@ -30,6 +30,7 @@ struct caju: View {
     @State var nextView: Bool = false
     @State var cajuTopOpacity: Double = 1
     @State var cajuImage: String = "cajuCorpo"
+    @State var cajuScale: CGFloat = 1.0
     
     @State var wrongAttempt: Bool = false
     
@@ -98,6 +99,7 @@ struct caju: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: UIScreen.main.bounds.width * 0.35, height: UIScreen.main.bounds.height * 0.25)
+                        .scaleEffect(cajuScale)
                         .offset(x: wrongAttempt ? -10 : 0)
                         .animation(Animation.default.repeatCount(5).speed(7))
                     
@@ -127,6 +129,7 @@ struct caju: View {
                     self.completed = true
                     cajuTopOpacity = 0
                     cajuImage = "cajuTodo"
+                    cajuScale = 1.6
                     
                 }else{
                     self.wrongAttempt.toggle()

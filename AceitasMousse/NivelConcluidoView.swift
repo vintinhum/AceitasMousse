@@ -85,7 +85,7 @@ struct NivelConcluidoView: View {
                 
             }
             .onAppear {
-                if(nivel == "3"){
+                if(nivel == "5"){
                     AppReviewRequest.requestReviewIfNeeded()
 
                 }
