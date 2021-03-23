@@ -23,6 +23,8 @@ struct cereja: View {
     
     @State private var fingerLocation: CGPoint?
     
+    @State var nextView = false
+    
     var cherrieDrag: some Gesture {
             DragGesture()
                 .onChanged { gesture in
@@ -34,6 +36,7 @@ struct cereja: View {
                     if (offsetCereja.y <= -1000 && offsetCereja.y >= -1200 &&
                             offsetCereja.x <= 10 && offsetCereja.x >= -10) {
                         print("level over")
+                        
                             
                     } else {
 //                                    self.offsetMaracuja = .zero
@@ -79,7 +82,7 @@ struct cereja: View {
                     
                     HStack{
                         Spacer()
-                        Image("muffin")
+                        Image("cupcake")
                             .resizable()
                             .scaledToFit()
                             .aspectRatio(3, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
@@ -94,7 +97,7 @@ struct cereja: View {
                     HStack{
                         Spacer(minLength: UIScreen.main.bounds.size.width/2 )
 
-                        Image("cherries")
+                        Image("cerejaUnica")
                             .resizable()
                             .scaledToFit()
                             .position(x: offsetCereja.x, y: offsetCereja.y)
@@ -110,6 +113,9 @@ struct cereja: View {
                 .ignoresSafeArea()
             }
         }
+        .fullScreenCover(isPresented: $nextView, content: {
+            NivelConcluidoView(nivel: "5", color: Color(red: 143/255, green: 20/255, blue: 87/255), imagemFruta: "cereja", imagemBotao: "botaoVerde")
+        })
         
         
     }
