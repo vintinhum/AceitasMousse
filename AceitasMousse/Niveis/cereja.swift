@@ -32,11 +32,10 @@ struct cereja: View {
                 }
 
                 .onEnded { value in
-                     print(value.location.y)
                     if (offsetCereja.y <= -1000 && offsetCereja.y >= -1200 &&
                             offsetCereja.x <= 10 && offsetCereja.x >= -10) {
                         print("level over")
-                        
+                        self.nextView = true
                             
                     } else {
 //                                    self.offsetMaracuja = .zero
@@ -113,8 +112,11 @@ struct cereja: View {
                 .ignoresSafeArea()
             }
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $nextView, content: {
-            NivelConcluidoView(nivel: "5", color: Color(red: 143/255, green: 20/255, blue: 87/255), imagemFruta: "cereja", imagemBotao: "botaoVerde")
+            NivelConcluidoView(nivel: "5", color: Color(red: 172/255, green: 39/255, blue: 103/255), imagemFruta: "cereja", imagemBotao: "botaoBege")
         })
         
         

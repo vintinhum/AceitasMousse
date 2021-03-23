@@ -19,14 +19,35 @@ struct NivelConcluidoView: View {
             VStack{
                 HStack{
                     Text(nivel)
-                        .font(.custom("Abstract Groovy", size: 85))
+                        .font(.custom("Abstract Groovy", size: 55))
                         .multilineTextAlignment(.center)
-                        .foregroundColor(Color( red: 1, green: 0.95, blue: 0.8))
-                        .offset(x: 30, y: 60)
-                    
-                    
+                        .foregroundColor(color)
+                        .background(
+                            Image("levelCircle")
+                            
+                            
+                        )
+                        .padding()
                     
                     Spacer()
+                    
+                    NavigationLink(
+                        destination: telaDeInicio(),
+                        label: {
+                            ZStack{
+                                Image("homeCircle")
+                                    .padding()
+                                    
+                                
+                                Image(systemName: "house.fill")
+                                    .foregroundColor(color)
+                                    .scaleEffect(2)
+                            }
+                            
+                            
+                        })
+                        .padding(.top, 20)
+                        
                 }
                 
                 Spacer()
@@ -36,7 +57,7 @@ struct NivelConcluidoView: View {
                         .resizable()
                         .scaledToFit()
                         .aspectRatio(1.7, contentMode: .fit)
-                        .offset(x: 0, y: -110)
+                        .offset(x: 0, y: -130)
                         .zIndex(1.0)
                     
                     Image("retanguloBege")
@@ -52,44 +73,44 @@ struct NivelConcluidoView: View {
                         .foregroundColor(Color( red: 0.35, green: 0.1, blue: 0.01))
                     //                        .padding(.horizontal, 50)
                     
-                    NavigationLink(
-                        destination: getDestination(),
-                        label: {
-                            ZStack{
-                                HStack {
-                                    Spacer()
-                                    Image(imagemBotao)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .aspectRatio(4, contentMode: .fit)
-                                    Spacer()
-                                    
-                                }
-                                
-                                Text("Continuar")
-                                    .font(.custom("Abstract Groovy", size: 25))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(Color( red: 1, green: 0.95, blue: 0.8))
-                            }
-                            .padding(.top, 200)
-                            
-                            
-                        })
-                        .navigationBarTitle("")
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
+                    
                     
                 }
                 
                 Spacer()
                 
+                NavigationLink(
+                    destination: getDestination(),
+                    label: {
+                        
+                        
+                        Text("Continuar")
+                            .font(.custom("Abstract Groovy", size: 25))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(color)
+                            .padding()
+                            
+                            .background(
+                                Image("botaoBege")
+                                
+                            )
+                        
+                        
+                        
+                    })
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
+                    .padding(.bottom, 40)
+                
+                
             }
             .onAppear {
                 if(nivel == "5"){
                     AppReviewRequest.requestReviewIfNeeded()
-
+                    
                 }
-
+                
             }
             .background(color)
             .ignoresSafeArea()
@@ -104,6 +125,10 @@ struct NivelConcluidoView: View {
             return AnyView(limao())
         }else if(nivel == "2"){
             return AnyView(maracuja())
+        }else if(nivel == "3"){
+            return AnyView(caju())
+        }else if(nivel == "4"){
+            return AnyView(cereja())
         }else{
             return AnyView(telaDeInicio())
         }
