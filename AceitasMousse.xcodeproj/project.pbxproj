@@ -28,6 +28,7 @@
 		E561195625E93C4B0086A1A0 /* morango.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561195525E93C4B0086A1A0 /* morango.swift */; };
 		E561195E25E93C650086A1A0 /* limao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561195D25E93C650086A1A0 /* limao.swift */; };
 		E561196325E93C7E0086A1A0 /* maracuja.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561196225E93C7E0086A1A0 /* maracuja.swift */; };
+		E5FCD2982603822C00859796 /* ScrollingStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FCD2972603822C00859796 /* ScrollingStackModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E561195525E93C4B0086A1A0 /* morango.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = morango.swift; sourceTree = "<group>"; };
 		E561195D25E93C650086A1A0 /* limao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = limao.swift; sourceTree = "<group>"; };
 		E561196225E93C7E0086A1A0 /* maracuja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maracuja.swift; sourceTree = "<group>"; };
+		E5FCD2972603822C00859796 /* ScrollingStackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				E561191D25E92C0C0086A1A0 /* Preview Content */,
 				86C8B03B25EFDC1000CC80DE /* NivelConcluidoView.swift */,
 				869EC14B25F129B2007EEE73 /* launchScreen.swift */,
+				E5FCD2972603822C00859796 /* ScrollingStackModifier.swift */,
 			);
 			path = AceitasMousse;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				E561191A25E92C0B0086A1A0 /* ContentView.swift in Sources */,
 				E561195625E93C4B0086A1A0 /* morango.swift in Sources */,
 				E561195025E93C270086A1A0 /* mapaView.swift in Sources */,
+				E5FCD2982603822C00859796 /* ScrollingStackModifier.swift in Sources */,
 				E561196325E93C7E0086A1A0 /* maracuja.swift in Sources */,
 				E553E493260226B3009AF2FF /* menuDeFasesView.swift in Sources */,
 				869EC14C25F129B2007EEE73 /* launchScreen.swift in Sources */,
