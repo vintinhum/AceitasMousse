@@ -12,9 +12,7 @@ struct menuDeFasesView: View {
     
     var iconesDeFases: [Image] = [.init("morango menu"), .init("limao menu"), .init("maracuja menu")]
     var listaDeFases: [AnyView] = [AnyView(morango()), AnyView(limao()), AnyView(maracuja())]
-    @State var nextView: Bool = false
-    @State var index: Int = 0
-    @State var chosenView: AnyView?
+    @ObservedObject var manager: Manager = Manager()
     
     var body: some View {
         
@@ -32,10 +30,8 @@ struct menuDeFasesView: View {
                                             .scaledToFill()
                                             .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 3, alignment: .center)
                                             .onTapGesture {
-                                                index = i
-                                                print(index)
-                                                chosenView = listaDeFases[index]
-                                                nextView = true
+                                                manager.index = i
+                                                manager.nextView = true
                                                 
                                             }
                             }
@@ -56,11 +52,12 @@ struct menuDeFasesView: View {
                     Spacer()
                 }
             }
-            .fullScreenCover(isPresented: $nextView, content: {
-                chosenView
+            .fullScreenCover(isPresented: $manager.nextView, content: {
+                listaDeFases[manager.index]
                 })
             
         }
+
 }
 
 struct menuDeFasesView_Previews: PreviewProvider {
@@ -68,3 +65,10 @@ struct menuDeFasesView_Previews: PreviewProvider {
         menuDeFasesView()
     }
 }
+
+class Manager: ObservableObject {
+    @Published var nextView: Bool = false
+    @Published var index: Int = 0
+    
+}
+
