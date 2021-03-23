@@ -29,7 +29,7 @@ struct caju: View {
     @State var completed: Bool = false
     @State var nextView: Bool = false
     @State var cajuTopOpacity: Double = 1
-    @State var cajuImage: String = "cajuBottom"
+    @State var cajuImage: String = "cajuCorpo"
     
     @State var wrongAttempt: Bool = false
     
@@ -60,7 +60,7 @@ struct caju: View {
             VStack{
                 Spacer()
                 
-                Image("cajuTop")
+                Image("cajuTopo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width * 0.2, height: UIScreen.main.bounds.height * 0.15)
@@ -117,8 +117,6 @@ struct caju: View {
         }
         .onTapGesture {
             
-            
-            
             if(completed){
                 self.nextView = true
             }else{
@@ -128,7 +126,7 @@ struct caju: View {
                     
                     self.completed = true
                     cajuTopOpacity = 0
-                    cajuImage = "cajuBottom"
+                    cajuImage = "cajuTodo"
                     
                 }else{
                     self.wrongAttempt.toggle()
@@ -137,6 +135,10 @@ struct caju: View {
             }
             
         }
+        
+        .fullScreenCover(isPresented: $nextView, content: {
+            NivelConcluidoView(nivel: "4", color: Color(red: 0.97, green: 0.77, blue: 0.28), imagemFruta: "cajuUnico", imagemBotao: "botaoLaranja")
+        })
         
     }
     
