@@ -28,19 +28,23 @@ struct Onboarding2: View {
                 .foregroundColor(Color.init(red: 249/255, green: 237/255, blue: 221/255))
             
             VStack{
-                ZStack{
-                    Text("No nosso pomar tem tudo que é fruta")
-                        .font(.custom("Ygro Sans Beta Medium", size: 25))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-                        .foregroundColor(.white)
-                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 50)
-                        .background(
-                            Rectangle()
-                                .foregroundColor(Color.init(red: 100/255, green: 142/255, blue: 79/255))
-                        
-                        )
+                HStack {
+                    Spacer()
+                        Text("No nosso pomar tem tudo que é fruta")
+                            .font(.custom("Ygro Sans Beta Medium", size: 25))
+                            .multilineTextAlignment(.center)
+                            .lineLimit(nil)
+                            .foregroundColor(.white)
+                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 40)
+                    Spacer()
+
+                    
                 }
+                .background(
+                    Rectangle()
+                        .foregroundColor(Color.init(red: 100/255, green: 142/255, blue: 79/255))
+                
+                )
                 
                 
                 HStack {
@@ -88,7 +92,7 @@ struct Onboarding2: View {
                                 changeMaracujaOpacity()
                             }
                             
-                            if(currentDate==2){
+                            else if(currentDate==3){
                                 changeMorangoOpacity()
                             }
                         }
@@ -133,5 +137,6 @@ struct Onboarding2: View {
 struct Onboarding2_Previews: PreviewProvider {
     static var previews: some View {
         Onboarding2()
+            .previewDevice("iPhone SE (2nd generation)")
     }
 }

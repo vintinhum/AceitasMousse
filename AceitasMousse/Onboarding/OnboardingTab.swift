@@ -43,6 +43,6 @@ struct OnboardingTab: View {
 struct OnboardingTab_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingTab()
-            .previewDevice("iPhone SE (2nd generation)")
+            .previewDevice("iPad Pro (12.9-inch) (4th generation)")
     }
 }

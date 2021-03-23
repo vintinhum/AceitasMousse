@@ -21,18 +21,18 @@ struct Onboarding4: View {
             VStack{
                 HStack {
                     Spacer()
-                    ZStack(){
-                        Text("Elas podem ser arrastadas")
-                            .font(.custom("Ygro Sans Beta Medium", size: 25))
-                            .multilineTextAlignment(.center)
-                            .lineLimit(nil)
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 30)
-                            .padding(.vertical, 50)
-                        
-                        
-                        
-                    }
+                    
+                    Text("Elas podem ser arrastadas")
+                        .font(.custom("Ygro Sans Beta Medium", size: 25))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 50)
+                    
+                    
+                    
+                    
                     
                     Spacer()
                     
@@ -42,7 +42,7 @@ struct Onboarding4: View {
                         .foregroundColor(Color.init(red: 251/255, green: 176/255, blue: 64/255))
                 )
                 
-
+                
                 
                 Image("maracuja")
                     .resizable()
@@ -69,7 +69,7 @@ struct Onboarding4: View {
                             }
                         
                     )
-            
+                
                 
             }
         }

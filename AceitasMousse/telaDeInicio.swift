@@ -41,7 +41,7 @@ struct telaDeInicio: View {
                     
                     
                     NavigationLink(
-                        destination: morango(),
+                        destination: getDestination(),
                         label: {
                             Image("jogar")
                                 .resizable()
@@ -91,6 +91,14 @@ struct telaDeInicio: View {
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         
+    }
+    
+    func getDestination() -> AnyView {
+        if (!UserDefaults.standard.bool(forKey: "didLaunchBefore")) {
+            return AnyView(morango())
+        } else {
+            return AnyView(OnboardingTab())
+        }
     }
 }
 
