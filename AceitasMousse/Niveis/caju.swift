@@ -82,7 +82,6 @@ struct caju: View {
                         moveCaju()
                     }
                     .onReceive(timer3) { input in
-                        print(currentDate3)
                         
                         if(Int(currentDate3)==2){
                             currentDate3 = 0
@@ -117,6 +116,8 @@ struct caju: View {
             
             
         }
+        .navigationBarBackButtonHidden(true)
+
         .onTapGesture {
             
             if(completed){

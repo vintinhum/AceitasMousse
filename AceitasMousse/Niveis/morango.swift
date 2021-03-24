@@ -85,7 +85,11 @@ struct morango: View {
                 }
             
         }
+        
+        .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
         .fullScreenCover(isPresented: $nextView, content: {
             NivelConcluidoView(nivel: "1", color: Color(red: 0.9, green: 0.2, blue: 0.24), imagemFruta: "morango", imagemBotao: "botaoVermelho")
             

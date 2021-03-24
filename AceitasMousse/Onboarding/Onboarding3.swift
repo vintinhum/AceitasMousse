@@ -50,7 +50,7 @@ struct Onboarding3: View {
                             .resizable()
                             .scaledToFit()
                             .aspectRatio(1, contentMode: .fit)
-                            .scaleEffect(CGSize(width: 1.8, height: 1.8))
+                            .scaleEffect(CGSize(width: 1.4, height: 1.4))
                             .opacity(0.2)
                         
                         
@@ -69,6 +69,9 @@ struct Onboarding3: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+
         
     }
 }

@@ -88,6 +88,9 @@ struct Onboarding5: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+
     }
     
     func setZoom(mag: CGFloat) -> CGFloat{

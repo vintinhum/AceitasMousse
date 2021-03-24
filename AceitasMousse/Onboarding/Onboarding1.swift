@@ -26,6 +26,9 @@ struct Onboarding1: View {
             }
             
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+
         .ignoresSafeArea()
         .background(Color( red: 255/255, green: 243/255, blue: 206/255))
         

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct Onboarding6: View {
+    @State var nextView = false
+    
+    
     var body: some View {
-        NavigationView {
             ZStack{
                 Rectangle()
                     .edgesIgnoringSafeArea(.all)
@@ -27,7 +29,7 @@ struct Onboarding6: View {
                             .padding(.horizontal, 30)
                             .padding(.vertical, 40)
                         
-                                            
+                        
                         
                         Spacer()
                         
@@ -52,35 +54,41 @@ struct Onboarding6: View {
                         .padding(.horizontal, 30)
                         .padding(.vertical, 50)
                     
-                    NavigationLink(
-                        destination: morango(),
-                        label: {
-                            ZStack{
-                                
-                                Image("botaoAzul")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .scaleEffect(0.4)
-                                
-                                
-                                Text("Simm")
-                                    .font(.custom("Abstract Groovy", size: 25))
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(Color( red: 1, green: 0.95, blue: 0.8))
-                            }
-                            .padding()
-                            .offset(y: -50)
+                    
+                    Button(action: {
+                        nextView = true
+                    }, label: {
+                        ZStack{
                             
-                        })
-                        .navigationBarTitle("")
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
+                            Image("botaoAzul")
+                                .resizable()
+                                .scaledToFit()
+                                .scaleEffect(0.4)
+                            
+                            
+                            Text("Simm")
+                                .font(.custom("Abstract Groovy", size: 25))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color( red: 1, green: 0.95, blue: 0.8))
+                        }
+                        .padding()
+                        .offset(y: -50)
+                    })
                 }
             }
             .onAppear{
                 UserDefaults.standard.set(true, forKey: "didLaunchBefore")
             }
-        }
+        
+            .fullScreenCover(isPresented: $nextView, content: {
+                morango()
+            })
+            
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
+        
         
     }
 }

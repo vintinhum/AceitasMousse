@@ -94,7 +94,8 @@ struct telaDeInicio: View {
     }
     
     func getDestination() -> AnyView {
-        if (!UserDefaults.standard.bool(forKey: "didLaunchBefore")) {
+        print(UserDefaults.standard.bool(forKey: "didLaunchBefore"))
+        if (UserDefaults.standard.bool(forKey: "didLaunchBefore")) {
             return AnyView(morango())
         } else {
             return AnyView(OnboardingTab())
@@ -108,3 +109,4 @@ struct telaDeInicio_Previews: PreviewProvider {
             .previewDevice("iPhone 12 Pro Max")
     }
 }
+ 

@@ -32,6 +32,9 @@ struct OnboardingTab: View {
             .background(Color(red: 249/255, green: 237/255, blue: 221/255))
             .foregroundColor(Color.init(red: 249/255, green: 237/255, blue: 221/255))
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarHidden(true)
 
         
         

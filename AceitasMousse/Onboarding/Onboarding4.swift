@@ -73,6 +73,9 @@ struct Onboarding4: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+
     }
 }
 

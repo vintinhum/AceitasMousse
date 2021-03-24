@@ -118,6 +118,9 @@ struct Onboarding2: View {
                 Spacer()
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+
 
 
     }
