@@ -11,18 +11,18 @@ struct ScrollingHStackModifier: ViewModifier {
     
     @State private var scrollOffset: CGFloat
     @State private var dragOffset: CGFloat
-    
+    @ObservedObject var index: IndexMenu
     
     var items: Int
     var itemWidth: CGFloat
     var itemSpacing: CGFloat
     
     
-    init(items: Int, itemWidth: CGFloat, itemSpacing: CGFloat) {
+    init(items: Int, itemWidth: CGFloat, itemSpacing: CGFloat, index: IndexMenu) {
         self.items = items
         self.itemWidth = itemWidth
         self.itemSpacing = itemSpacing
-        
+        self.index = index
         
         // Calculate Total Content Width
         let contentWidth: CGFloat = CGFloat(items) * itemWidth + CGFloat(items - 1) * itemSpacing
@@ -83,25 +83,33 @@ struct ScrollingHStackModifier: ViewModifier {
                             
                             // Check the position of the scroll
                             
-                            var scrollPosition: Int
-
-                            if index == 0 {
-                                scrollPosition = items - 1
-                            }
-                            else {
-                                scrollPosition = Int(index) % (items - 1)
-                            }
+//                            var scrollPosition: Int
+//
+//                            if index == 0 {
+//                                scrollPosition = items - 1
+//                            }
+//                            else {
+//                                scrollPosition = Int(index) % (items - 1)
+//                            }
+//
+//                            if event.startLocation.x < event.location.x {
+//                                scrollPosition += 1
+//                                print(scrollPosition)
+//                            }
+//                            else if event.startLocation.x > event.location.x {
+//                                scrollPosition -= 1
+//                                print(scrollPosition)
+//                            }
+//                            print(index)
+                            self.index.scrollPosition = index
                             
-                            if event.startLocation.x < event.location.x {
-                                scrollPosition += 1
-                                print(scrollPosition)
-                            }
-                            else if event.startLocation.x > event.location.x {
-                                scrollPosition -= 1
-                                print(scrollPosition)
-                            }
-//                            print(scrollPosition)
                         })
             )
     }
+}
+
+class IndexMenu: ObservableObject {
+    @Published var scrollPosition: CGFloat = 2
+    
+    
 }

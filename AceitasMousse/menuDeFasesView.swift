@@ -13,10 +13,10 @@ struct menuDeFasesView: View {
     var iconesDeFases: [Image] = [.init("morango menu"), .init("limao menu"), .init("maracuja menu")]
     var listaDeFases: [AnyView] = [AnyView(morango()), AnyView(limao()), AnyView(maracuja())]
     @ObservedObject var manager: Manager = Manager()
-
+    @ObservedObject var index: IndexMenu = IndexMenu()
     
     var body: some View {
-        
+        NavigationView {
         ZStack {
             Rectangle()
                 .foregroundColor(Color(red: 255/255, green: 243/255, blue: 206/255))
@@ -39,22 +39,30 @@ struct menuDeFasesView: View {
                     }
                     
                 }
-                .modifier(ScrollingHStackModifier(items: iconesDeFases.count, itemWidth: 250, itemSpacing: 80))
+                .modifier(ScrollingHStackModifier(items: iconesDeFases.count, itemWidth: 250, itemSpacing: 80, index: index))
+                .gesture(DragGesture().onEnded( {event in
+                    if event.startLocation.x < event.location.x {
+                        print(index)
+                    }
+                    else if event.startLocation.x > event.location.x {
+                        print(index)
+                    }
+                }))
                 
                 
                 Spacer()
                 
+                NavigationLink(
+                    destination: getDestination(),
+                    label: {
+                        Image("botaoMenuDeFases")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    })
                 
-                Button(action: {
-                    getDestination()
-                }, label: {
-                    Image("botaoMenuDeFases")
-                        .resizable()
-                        .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                })
                 Spacer()
             }
+        }
         }
         .fullScreenCover(isPresented: $manager.nextView, content: {
             listaDeFases[manager.index]
@@ -63,15 +71,17 @@ struct menuDeFasesView: View {
     }
     
     func getDestination() -> AnyView {
-        if (manager.scrollPosition == 1){
+        
+        
+        if (index.scrollPosition == 1){
             return AnyView(limao())
-        }else if(manager.scrollPosition == 2){
-            return AnyView(maracuja())
-        }else{
+        }else if(index.scrollPosition == 2){
             return AnyView(morango())
+        }else{
+            return AnyView(maracuja())
         }
     }
-
+    
     
 }
 
