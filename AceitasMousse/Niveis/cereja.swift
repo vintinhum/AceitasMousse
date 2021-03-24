@@ -32,7 +32,10 @@ struct cereja: View {
                 }
 
                 .onEnded { value in
-                    if (offsetCereja.y <= -1000 && offsetCereja.y >= -1200 &&
+                    print(offsetCereja.y )
+                    print(offsetCereja.x )
+
+                    if (offsetCereja.y <= -1000 && offsetCereja.y >= -1350 &&
                             offsetCereja.x <= 10 && offsetCereja.x >= -10) {
                         print("level over")
                         self.nextView = true

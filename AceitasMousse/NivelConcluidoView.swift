@@ -117,6 +117,11 @@ struct NivelConcluidoView: View {
             
             
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
+
         
     }
     

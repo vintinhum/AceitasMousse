@@ -74,6 +74,7 @@ struct menuDeFasesView: View {
             }
         }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .navigationBarTitle("")
