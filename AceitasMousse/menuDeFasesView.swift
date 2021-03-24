@@ -10,8 +10,8 @@ import SwiftUI
 struct menuDeFasesView: View {
     
     
-    var iconesDeFases: [Image] = [.init("morango menu"), .init("limao menu"), .init("maracuja menu")]
-    var listaDeFases: [AnyView] = [AnyView(morango()), AnyView(limao()), AnyView(maracuja())]
+    var iconesDeFases: [Image] = [.init("morangoMenu"), .init("limaoMenu"), .init("maracujaMenu"), .init("cajuMenu"), .init("cerejaMenu")]
+    var listaDeFases: [AnyView] = [AnyView(cereja()), AnyView(caju()), AnyView(maracuja()),AnyView(limao()),AnyView(morango())]
     @ObservedObject var manager: Manager = Manager()
     @ObservedObject var index: IndexMenu = IndexMenu()
     
@@ -84,15 +84,20 @@ struct menuDeFasesView: View {
     }
     
     func getDestination() -> AnyView {
+        print(index.scrollPosition)
+        return listaDeFases[Int(index.scrollPosition)]
         
-        
-        if (index.scrollPosition == 1){
-            return AnyView(limao())
-        }else if(index.scrollPosition == 2){
-            return AnyView(morango())
-        }else{
-            return AnyView(maracuja())
-        }
+//        if (index.scrollPosition == 1){
+//            return AnyView(limao())
+//        }else if(index.scrollPosition == 2){
+//            return AnyView(morango())
+//        }else if(index.scrollPosition == 3){
+//            return AnyView(maracuja())
+//        }else if(index.scrollPosition == 4){
+//            return AnyView(maracuja())
+//        }else {
+//            return AnyView(maracuja())
+//        }
     }
     
     

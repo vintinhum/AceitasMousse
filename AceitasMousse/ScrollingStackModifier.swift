@@ -103,13 +103,14 @@ struct ScrollingHStackModifier: ViewModifier {
 //                            print(index)
                             self.index.scrollPosition = index
                             
+                            
                         })
             )
     }
 }
 
 class IndexMenu: ObservableObject {
-    @Published var scrollPosition: CGFloat = 2
+    @Published var scrollPosition: CGFloat = 4
     
     
 }
