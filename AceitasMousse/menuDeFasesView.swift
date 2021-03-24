@@ -55,9 +55,16 @@ struct menuDeFasesView: View {
                 NavigationLink(
                     destination: getDestination(),
                     label: {
-                        Image("botaoMenuDeFases")
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        ZStack{
+                            Image("botaoJogar")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Text("Jogar")
+                                .font(.custom("Abstract Groovy", size: 30))
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color( red: 255/255, green: 243/255, blue: 206/255))
+                        }
+                        
                     })
                 
                 Spacer()
