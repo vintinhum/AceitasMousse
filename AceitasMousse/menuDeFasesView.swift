@@ -66,11 +66,17 @@ struct menuDeFasesView: View {
                         }
                         
                     })
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarHidden(true)
+                    .navigationBarTitle("")
                 
                 Spacer()
             }
         }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
         .fullScreenCover(isPresented: $manager.nextView, content: {
             listaDeFases[manager.index]
         })

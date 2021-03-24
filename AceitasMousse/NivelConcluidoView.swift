@@ -32,7 +32,7 @@ struct NivelConcluidoView: View {
                     Spacer()
                     
                     NavigationLink(
-                        destination: telaDeInicio(),
+                        destination: menuDeFasesView(),
                         label: {
                             ZStack{
                                 Image("homeCircle")
@@ -130,7 +130,7 @@ struct NivelConcluidoView: View {
         }else if(nivel == "4"){
             return AnyView(cereja())
         }else{
-            return AnyView(telaDeInicio())
+            return AnyView(menuDeFasesView())
         }
     }
 }

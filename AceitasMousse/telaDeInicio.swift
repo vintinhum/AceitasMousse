@@ -96,7 +96,7 @@ struct telaDeInicio: View {
     func getDestination() -> AnyView {
         print(UserDefaults.standard.bool(forKey: "didLaunchBefore"))
         if (UserDefaults.standard.bool(forKey: "didLaunchBefore")) {
-            return AnyView(morango())
+            return AnyView(menuDeFasesView())
         } else {
             return AnyView(OnboardingTab())
         }
