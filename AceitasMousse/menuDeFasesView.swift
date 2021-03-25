@@ -11,7 +11,8 @@ struct menuDeFasesView: View {
     
     
     var iconesDeFases: [Image] = [.init("morangoMenu"), .init("limaoMenu"), .init("maracujaMenu"), .init("cajuMenu"), .init("cerejaMenu")]
-    var listaDeFases: [AnyView] = [AnyView(cereja()), AnyView(caju()), AnyView(maracuja()),AnyView(limao()),AnyView(morango())]
+    var listaDeFases: [AnyView] = [AnyView(cereja()), AnyView(caju()), AnyView(maracuja()), AnyView(limao()),AnyView(morango())]
+    var listaDeFasesIcone: [AnyView] = [AnyView(morango()), AnyView(limao()), AnyView(maracuja()), AnyView(caju()), AnyView(cereja())]
     @ObservedObject var manager: Manager = Manager()
     @ObservedObject var index: IndexMenu = IndexMenu()
     
@@ -24,12 +25,12 @@ struct menuDeFasesView: View {
             
             VStack {
                 Spacer()
-                HStack(alignment: .center, spacing: UIScreen.main.bounds.width / 3.5) {
+                HStack(alignment: .center, spacing: UIScreen.main.bounds.width / 8) {
                     ForEach(0..<iconesDeFases.count) { i in
                         iconesDeFases[i]
                             .resizable()
                             .scaledToFill()
-                            .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 3, alignment: .center)
+                            .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.width / 1.5, alignment: .center)
                             
                             .onTapGesture {
                                 manager.index = i
@@ -39,7 +40,7 @@ struct menuDeFasesView: View {
                     }
                     
                 }
-                .modifier(ScrollingHStackModifier(items: iconesDeFases.count, itemWidth: 250, itemSpacing: 80, index: index))
+                .modifier(ScrollingHStackModifier(items: iconesDeFases.count, itemWidth: UIScreen.main.bounds.width / 1.5, itemSpacing: UIScreen.main.bounds.width / 8, index: index))
                 .gesture(DragGesture().onEnded( {event in
                     if event.startLocation.x < event.location.x {
                         print(index)
@@ -79,7 +80,7 @@ struct menuDeFasesView: View {
         .navigationBarHidden(true)
         .navigationBarTitle("")
         .fullScreenCover(isPresented: $manager.nextView, content: {
-            listaDeFases[manager.index]
+            listaDeFasesIcone[manager.index]
         })
         
     }

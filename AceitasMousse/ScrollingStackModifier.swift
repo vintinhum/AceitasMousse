@@ -102,7 +102,7 @@ struct ScrollingHStackModifier: ViewModifier {
 //                            }
 //                            print(index)
                             self.index.scrollPosition = index
-                            
+                            print(center)
                             
                         })
             )
