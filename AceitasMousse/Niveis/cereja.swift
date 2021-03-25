@@ -22,8 +22,12 @@ struct cereja: View {
     @State var offsetCereja: CGPoint = .zero
     
     @State private var fingerLocation: CGPoint?
-    
+    @State var completed = false
     @State var nextView = false
+    
+    @State var cupcakeImage = "cupcake"
+    @State var cerejaOpacity: Double = 1
+    @State var aspectRatioCupcake : CGFloat = 3
     
     var cherrieDrag: some Gesture {
             DragGesture()
@@ -35,10 +39,13 @@ struct cereja: View {
                     print(offsetCereja.y )
                     print(offsetCereja.x )
 
-                    if (offsetCereja.y <= -1000 && offsetCereja.y >= -1350 &&
-                            offsetCereja.x <= 10 && offsetCereja.x >= -10) {
+                    if (offsetCereja.y <= -900 && offsetCereja.y >= -1400 &&
+                            offsetCereja.x <= 20 && offsetCereja.x >= -20) {
                         print("level over")
-                        self.nextView = true
+                        self.completed = true
+                        cerejaOpacity = 0
+                        cupcakeImage = "fullCupcake"
+                        aspectRatioCupcake = 2.2
                             
                     } else {
 //                                    self.offsetMaracuja = .zero
@@ -84,10 +91,15 @@ struct cereja: View {
                     
                     HStack{
                         Spacer()
-                        Image("cupcake")
+                        Image(cupcakeImage)
                             .resizable()
                             .scaledToFit()
-                            .aspectRatio(3, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                            .aspectRatio(aspectRatioCupcake, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                            .onTapGesture {
+                                if(completed){
+                                    self.nextView = true
+                                }
+                            }
                         Spacer()
                     }
                     
@@ -108,6 +120,7 @@ struct cereja: View {
                                 cherrieDrag.simultaneously(with: fingerDrag) // 4
 
                             )
+                            .opacity(cerejaOpacity)
 
                     }
                     
