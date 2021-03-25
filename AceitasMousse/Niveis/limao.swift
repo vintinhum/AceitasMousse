@@ -76,7 +76,7 @@ struct limao: View {
         }
         .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $nextView, content: {
-            NivelConcluidoView(nivel: "2", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "limao novo", imagemBotao: "botaoVerde")
+            NivelConcluidoView(nivel: "2", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "retanguloBegeLimao", imagemBotao: "botaoVerde")
 
         })
         

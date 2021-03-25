@@ -141,7 +141,7 @@ struct caju: View {
         }
         
         .fullScreenCover(isPresented: $nextView, content: {
-            NivelConcluidoView(nivel: "4", color: Color(red: 136/255, green: 85/255, blue: 37/255), imagemFruta: "cajuUnico", imagemBotao: "botaoBege")
+            NivelConcluidoView(nivel: "4", color: Color(red: 136/255, green: 85/255, blue: 37/255), imagemFruta: "retanguloBegeCaju", imagemBotao: "botaoBege")
         })
         
     }

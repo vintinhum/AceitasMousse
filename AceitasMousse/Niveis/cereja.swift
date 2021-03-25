@@ -119,7 +119,7 @@ struct cereja: View {
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $nextView, content: {
-            NivelConcluidoView(nivel: "5", color: Color(red: 172/255, green: 39/255, blue: 103/255), imagemFruta: "cereja", imagemBotao: "botaoBege")
+            NivelConcluidoView(nivel: "5", color: Color(red: 172/255, green: 39/255, blue: 103/255), imagemFruta: "retanguloBegeCereja", imagemBotao: "botaoBege")
         })
         
         

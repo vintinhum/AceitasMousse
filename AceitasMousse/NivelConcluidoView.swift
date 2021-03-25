@@ -37,7 +37,7 @@ struct NivelConcluidoView: View {
                             ZStack{
                                 Image("homeCircle")
                                     .padding()
-                                    
+                                
                                 
                                 Image(systemName: "house.fill")
                                     .foregroundColor(color)
@@ -47,30 +47,28 @@ struct NivelConcluidoView: View {
                             
                         })
                         .padding(.top, 20)
-                        
+                    
                 }
                 
                 Spacer()
                 
                 ZStack{
-                    Image(imagemFruta)
-                        .resizable()
-                        .scaledToFit()
-                        .aspectRatio(1.7, contentMode: .fit)
-                        .offset(x: 0, y: -130)
-                        .zIndex(1.0)
                     
-                    Image("retanguloBege")
+                    Image(imagemFruta)
                         .resizable()
                         .scaledToFit()
                         .padding(.horizontal,20)
                     
                     
+                    
                     Text("Parabéns! \n Você conseguiu!")
-                        .font(.custom("Ygro Sans Beta Medium", size: 25))
+                        .font(.custom("Ygro Sans Beta Medium", size: UIScreen.main.bounds.height * 0.03))
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
                         .foregroundColor(Color( red: 0.35, green: 0.1, blue: 0.01))
+                        .padding(.top, UIScreen.main.bounds.height * 0.15 )
+                    
+                    
                     //                        .padding(.horizontal, 50)
                     
                     
@@ -121,7 +119,7 @@ struct NivelConcluidoView: View {
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
-
+        
         
     }
     
@@ -142,7 +140,7 @@ struct NivelConcluidoView: View {
 
 struct NivelConcluidoView_Previews: PreviewProvider {
     static var previews: some View {
-        NivelConcluidoView(nivel: "0", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "limao", imagemBotao: "botaoVerde")
-            .previewDevice("iPod touch (7th generation)")
+        NivelConcluidoView(nivel: "0", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "retanguloBegeLimao", imagemBotao: "botaoVerde")
+            .previewDevice("iPhone SE (2nd generation)")
     }
 }

@@ -109,7 +109,7 @@ struct maracuja: View {
         }
         .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $nextView, content: {
-            NivelConcluidoView(nivel: "3", color: Color(red: 0.97, green: 0.77, blue: 0.28), imagemFruta: "maracuja", imagemBotao: "botaoLaranja")
+            NivelConcluidoView(nivel: "3", color: Color(red: 0.97, green: 0.77, blue: 0.28), imagemFruta: "retanguloBegeMaracuja", imagemBotao: "botaoLaranja")
 
         })
     }
