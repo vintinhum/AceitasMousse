@@ -66,7 +66,7 @@ struct NivelConcluidoView: View {
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
                         .foregroundColor(Color( red: 0.35, green: 0.1, blue: 0.01))
-                        .padding(.top, UIScreen.main.bounds.height * 0.15 )
+                        .padding(.top, UIScreen.main.bounds.width * 0.15 )
                     
                     
                     //                        .padding(.horizontal, 50)
@@ -145,6 +145,6 @@ struct NivelConcluidoView: View {
 struct NivelConcluidoView_Previews: PreviewProvider {
     static var previews: some View {
         NivelConcluidoView(nivel: "0", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "retanguloBegeLimao", imagemBotao: "botaoVerde")
-            .previewDevice("iPad (8th generation)")
+            .previewDevice("iPhone 8")
     }
 }
