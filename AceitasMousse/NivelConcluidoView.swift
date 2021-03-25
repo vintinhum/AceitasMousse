@@ -83,15 +83,19 @@ struct NivelConcluidoView: View {
                         
                         
                         Text("Continuar")
-                            .font(.custom("Abstract Groovy", size: 25))
+                            .font(.custom("Abstract Groovy", size:  UIScreen.main.bounds.width * 0.05))
                             .multilineTextAlignment(.center)
                             .foregroundColor(color)
-                            .padding()
                             
                             .background(
                                 Image("botaoBege")
+                                    .resizable()
+                                    .frame(width: UIScreen.main.bounds.width/2.5, height: UIScreen.main.bounds.height/10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 
                             )
+                            .padding()
+                            .padding(.bottom)
+                        
                         
                         
                         
@@ -141,6 +145,6 @@ struct NivelConcluidoView: View {
 struct NivelConcluidoView_Previews: PreviewProvider {
     static var previews: some View {
         NivelConcluidoView(nivel: "0", color: Color(red: 0.78, green: 0.9, blue: 0.3), imagemFruta: "retanguloBegeLimao", imagemBotao: "botaoVerde")
-            .previewDevice("iPhone SE (2nd generation)")
+            .previewDevice("iPad (8th generation)")
     }
 }
