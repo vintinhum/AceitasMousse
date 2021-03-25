@@ -73,12 +73,16 @@ struct caju: View {
                         
                         if currentDate2 == 2 {
                             currentDate2 = 0
+
                         }
                         else {
                             currentDate2 += 1
                         }
                         
                         
+                        moveCaju()
+                    }
+                    .onAppear{
                         moveCaju()
                     }
                     .onReceive(timer3) { input in
@@ -123,9 +127,10 @@ struct caju: View {
             if(completed){
                 self.nextView = true
             }else{
-                if((currentDate3 <= 0.1) ||
-                    (currentDate3<=1.2 && currentDate3 >= 0.8 ) ||
-                    (currentDate3<=2 && currentDate3 >= 1.8)){
+                print(currentDate3)
+                if((currentDate3 <= 0.35 && currentDate3 >= 0.25) ||
+                    (currentDate3 >= 1.15 && currentDate3 <= 1.25) ||
+                    (currentDate3 >= 1.85 && currentDate3 <= 1.9) ){
                     
                     self.completed = true
                     cajuTopOpacity = 0
