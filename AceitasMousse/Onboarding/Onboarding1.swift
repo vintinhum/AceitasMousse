@@ -21,8 +21,11 @@ struct Onboarding1: View {
                     .lineLimit(nil)
                     .foregroundColor(.black)
                 
-                Image("Fruzzle-5")
-
+                Image("FruzzleMelhor")
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+                    .padding(.horizontal, 40)
             }
             
         }
