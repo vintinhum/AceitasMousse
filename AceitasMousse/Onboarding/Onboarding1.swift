@@ -16,7 +16,7 @@ struct Onboarding1: View {
             
             VStack {
                 Text("Bem-vinde ao")
-                    .font(.custom("Ygro Sans Beta Medium", size: 25))
+                    .font(.custom("Ygro Sans Beta Medium", size: UIScreen.main.bounds.width*0.06))
                     .multilineTextAlignment(.center)
                     .lineLimit(nil)
                     .foregroundColor(.black)
@@ -42,5 +42,6 @@ struct Onboarding1: View {
 struct Onboarding1_Previews: PreviewProvider {
     static var previews: some View {
         Onboarding1()
+            .previewDevice("iPhone 8")
     }
 }
